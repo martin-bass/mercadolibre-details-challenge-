@@ -1,4 +1,4 @@
-interface ProductPicture extends Record<string, any> {
+export interface ProductPicture extends Record<string, any> {
   id: string;
   url: string;
 }
