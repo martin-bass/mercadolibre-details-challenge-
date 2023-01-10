@@ -1,22 +1,26 @@
-import { HStack, Image, Stack, VStack } from "@chakra-ui/react";
+import { HStack, Image, Stack, VStack, Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import Producto from "../product/mock";
-
-//import { ProductPicture } from "../product/types";
 
 function ProdImage() {
   const { pictures } = Producto.product;
 
   const [imgSelect, setImgSelect] = useState(pictures[0].url);
+  const [mouseOver, setMouseOver] = useState(false);
 
   const handleSelect = (id: string) => {
     let select: any = pictures.find((p) => p.id === id);
     setImgSelect(select.url);
   };
 
+  const handleMouseOver = (id: string) => {
+    setMouseOver(!mouseOver);
+    handleSelect(id);
+  };
+
   return (
-    <HStack w={'full'}>
+    <HStack w={"full"}>
       <VStack alignSelf={"start"}>
         {pictures.map((pic) => (
           <Image
@@ -29,17 +33,22 @@ function ProdImage() {
             objectFit="contain"
             cursor="pointer"
             _hover={{
-              border: "2px solid #3483fa;"
+              border: "2px solid #3483fa;",
             }}
-            onClick={() => handleSelect(pic.id)}
+            onMouseEnter={() => handleMouseOver(pic.id)}
           />
         ))}
       </VStack>
-      <Stack paddingLeft={36} paddingTop={30}>
-        <Image 
-        objectFit="contain"
-        src={imgSelect} />
-      </Stack>
+      <Box
+        w="500px"
+        display="flex"
+        justifyContent={"center"}
+        alignItems={"center"}
+        marginLeft={"120px !important"}
+        marginTop={"30px !important"}
+      >
+        <Image objectFit="contain" src={imgSelect} />
+      </Box>
     </HStack>
   );
 }

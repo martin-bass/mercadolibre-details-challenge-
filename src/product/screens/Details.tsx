@@ -4,20 +4,20 @@ import { Product } from "../types";
 import mock from "../mock";
 
 //Chakra UI
-import { HStack, VStack } from "@chakra-ui/react";
+import { HStack, VStack, StackDivider } from "@chakra-ui/react";
 
 //Components
 import Informacion from "../../components/Informacion";
-import Vendedor from '../../components/Vendedor';
-import MediosDePago from '../../components/MediosDePago';
-import ProdImage from '../../components/ProdImage'
+import Vendedor from "../../components/Vendedor";
+import MediosDePago from "../../components/MediosDePago";
+import ProdImage from "../../components/ProdImage";
+import Carrousel from '../../components/Carrousel';
 
 interface Props {
-  product: Product
+  product: Product;
 }
 
 const DetailsScreen: React.FC<Props> = ({ product }) => {
-  
   return (
     <HStack
       backgroundColor={"white"}
@@ -25,17 +25,22 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
       borderRadius={5}
       boxShadow={"base"}
       minHeight={"100vh"}
-      justifyContent={'space-between'}
-      alignItems={'start'}  
-      py={5}  
+      justifyContent={"space-between"}
+      alignItems={"start"}
+      py={5}
       px={8}
     >
       {/* Izquierda */}
-      <VStack>
+      <VStack
+        spacing={4}
+        align="stretch"
+        divider={<StackDivider borderColor="blackAlpha.300" />}
+      >
         <ProdImage />
+        <Carrousel />
       </VStack>
       {/* Derecha */}
-      <VStack >
+      <VStack>
         <Informacion />
         <Vendedor />
         <MediosDePago />
