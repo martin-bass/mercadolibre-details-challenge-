@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import Producto from "../product/mock";
 
+
 function ProdImage() {
   const { pictures } = Producto.product;
 

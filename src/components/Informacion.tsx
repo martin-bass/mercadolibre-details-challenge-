@@ -6,11 +6,12 @@ import {
   Text,
   VStack,
   Link,
-  Button
+  Button,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import Producto from "../product/mock";
+import { Product } from "../product/types";
 
 //React Icons
 import { BsHeart, BsHeartFill, BsTruck } from "react-icons/bs";
@@ -19,7 +20,7 @@ import { TfiBackLeft } from "react-icons/tfi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 
 function Informacion() {
-  const { sold_quantity, title, price } = Producto.product;
+  const { sold_quantity, title, price }: Product = Producto.product;
   const [fillHeart, setFillHeart] = useState(false);
 
   return (
@@ -126,10 +127,11 @@ function Informacion() {
           </HStack>
           <HStack width={"full"} justifyContent={"start"} py={4}>
             <AiOutlineTrophy color={"gray"} fontSize={20} />
-            <Text fontSize={"sm"} color={'blackAlpha.600'}>
+            <Text fontSize={"sm"} color={"blackAlpha.600"}>
               <span style={{ color: "#3483FA", fontWeight: "bold" }}>
                 Mercado Puntos.
-              </span> Sumás 67 puntos
+              </span>{" "}
+              Sumás 67 puntos
             </Text>
           </HStack>
         </VStack>

@@ -15,7 +15,6 @@ function MediosDePago() {
       border="1px solid"
       borderColor="blackAlpha.300"
       borderRadius="10px"
-      padding="1rem"
       w={352}
       px={4}
       py={7}
