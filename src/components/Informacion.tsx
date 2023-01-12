@@ -120,7 +120,7 @@ function Informacion() {
             <IoShieldCheckmarkOutline color={"gray"} fontSize={30} />
             <Text fontSize={"sm"} color={"blackAlpha.600"}>
               <span style={{ color: "#3483FA", fontWeight: "bold" }}>
-                Compra Potegida,
+                Compra Protegida,
               </span>{" "}
               recibí el producto que esperabas o te devolvemos tu dinero.
             </Text>

@@ -1,8 +1,8 @@
 export interface ProductPicture extends Record<string, any> {
-  id: string;
-  url: string;
-  title: string;
-  price: number
+  id?: string;
+  url?: string;
+  title?: string;
+  price?: number | any;
 }
 
 export interface Product extends Record<string, any> {
@@ -13,4 +13,7 @@ export interface Product extends Record<string, any> {
   sold_quantity?: number;
   condition?: string;
   pictures: ProductPicture[];
+  attributes: string[] | any;
 }
+
+

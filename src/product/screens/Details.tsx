@@ -12,6 +12,7 @@ import Vendedor from "../../components/Vendedor";
 import MediosDePago from "../../components/MediosDePago";
 import ProdImage from "../../components/ProdImage";
 import Carrousel from '../../components/Carrousel';
+import Tabla from '../../components/Tabla';
 
 interface Props {
   product: Product;
@@ -38,6 +39,7 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
       >
         <ProdImage />
         <Carrousel />
+        <Tabla />
       </VStack>
       {/* Derecha */}
       <VStack>

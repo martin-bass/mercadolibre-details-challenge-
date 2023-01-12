@@ -42,6 +42,7 @@ function ProdImage() {
       </VStack>
       <Box
         w="500px"
+        h='500px'
         display="flex"
         justifyContent={"center"}
         alignItems={"center"}

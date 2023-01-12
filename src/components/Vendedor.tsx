@@ -121,7 +121,7 @@ function Vendedor() {
           </Text>
         </VStack>
       </HStack>
-      <HStack paddingTop={3}>
+      <HStack alignItems={'start'}>
         <Link fontSize={14}>Ver más datos del vendedor</Link>
       </HStack>
     </Stack>

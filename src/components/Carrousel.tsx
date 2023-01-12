@@ -1,4 +1,13 @@
-import { Stack, Text, VStack, Box, Image } from "@chakra-ui/react";
+import {
+  Stack,
+  Text,
+  VStack,
+  Box,
+  Image,
+  StackDivider,
+  Link,
+  HStack
+} from "@chakra-ui/react";
 import React from "react";
 
 import { ProductPicture } from "../product/types";
@@ -23,20 +32,20 @@ interface Props {
 const Carrousel: React.FC = () => {
   const infoCards = infoCarrousel.infoCarrousel.pictures;
 
-
   return (
-    <VStack w={'full'}>
+    <VStack w={"full"}>
       <Text fontSize={24} w={"full"}>
         Publicaciones del vendedor
       </Text>
-      <Stack w={750} marginTop={"20px !important"}>
+      <Stack w={800} marginTop={"20px !important"}>
         <Swiper
           slidesPerView={3}
-          spaceBetween={1}
+          spaceBetween={0}
           loop={true}
           navigation={true}
           modules={[Navigation]}
-          //className="mySwiper"
+          width={780}
+          className="mySwiper"
         >
           {infoCards.map((info) => (
             <SwiperSlide key={info.id}>
@@ -45,6 +54,9 @@ const Carrousel: React.FC = () => {
           ))}
         </Swiper>
       </Stack>
+      <HStack paddingTop={5} alignItems={'start'} w={'full'} paddingLeft={5} marginBottom={'30px !important'}>
+        <Link fontSize={14}>Ver más publicaciones del vendedor</Link>
+      </HStack>
     </VStack>
   );
 };
@@ -60,6 +72,13 @@ const CarrouselCard: React.FC<Props> = ({ infoParaElCard }) => {
       _hover={{
         boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px;",
       }}
+      divider={
+        <StackDivider
+          borderColor="blackAlpha.300"
+          alignSelf="center"
+          w={"full"}
+        />
+      }
     >
       <Box p={1}>
         <Image src={infoParaElCard.url} objectFit="contain" cursor="pointer" />
