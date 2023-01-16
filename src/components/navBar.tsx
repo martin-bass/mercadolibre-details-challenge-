@@ -1,7 +1,6 @@
 import React from "react";
 
 //Chakra UI
-
 import {
   Container,
   Stack,
@@ -17,6 +16,7 @@ import {
   MenuList,
   MenuItem,
   Button,
+  Flex,
 } from "@chakra-ui/react";
 
 //ICONS
@@ -108,45 +108,55 @@ function NavBar() {
               <Icon as={HiOutlineMapPin} boxSize={6} marginTop={2} />
               <Box>
                 <Text fontSize={"smaller"} color={"blackAlpha.600"}>
-                  Enviar a Homero
+                  Enviar a Goku
                 </Text>
                 <Text fontSize={"sm"} color={"blackAlpha.800"}>
                   Calle Falsa 123
                 </Text>
               </Box>
             </Stack>
-            <Stack
-              direction={"row"}
+            <HStack
               fontSize={"14px"}
               spacing={4}
               color={"blackAlpha.600"}
               paddingLeft={6}
             >
-              <Menu autoSelect={false}>
-                <MenuButton
-                  as={Button}
-                  rightIcon={<BiChevronDown />}
-                  variant="unstyled"
-                  fontSize={"14px"}
-                  fontWeight={"normal"}
-                  d="flex"
-                  alignItems="center"
-                  transition="all 0.1s"
+              <Flex>
+                <Menu
+                  //autoSelect={false}
+                  // boundary={'scrollParent'}
+                  // preventOverflow={false}
+                  //flip={false}
                 >
-                  Categorías
-                </MenuButton>
-                <MenuList
-                  backgroundColor={"blackAlpha.800"}
-                  color={"white"}
-                  width={72}
-                >
-                  {itemsDelMenu.map((item) => (
-                    <MenuItem _hover={{ bg: "secondary.500" }} key={item}>
-                      {item}
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </Menu>
+                  <MenuButton
+                    as={Button}
+                    rightIcon={<BiChevronDown />}
+                    variant="unstyled"
+                    fontSize={"14px"}
+                    fontWeight={"normal"}
+                    display="flex"
+                    alignItems="center"
+                    transition="all 0.1s"
+                  >
+                    Categorías
+                  </MenuButton>
+                  <MenuList
+                    backgroundColor={"blackAlpha.800"}
+                    color={"white"}
+                    width={72}
+                  >
+                    {itemsDelMenu.map((item) => (
+                      <MenuItem
+                        _hover={{ bg: "secondary.500" }}
+                        key={item}
+                        _focus={{ bg: "secondary.500" }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </Menu>
+              </Flex>
               <HStack spacing={5}>
                 <Text>Ofertas</Text>
                 <Text>Historial</Text>
@@ -155,7 +165,7 @@ function NavBar() {
                 <Text>Vender</Text>
                 <Text>Ayuda</Text>
               </HStack>
-            </Stack>
+            </HStack>
             <Stack
               direction={"row"}
               justifyContent={"center"}
@@ -173,7 +183,7 @@ function NavBar() {
                 <HStack d={"flex"} align={"baseline"}>
                   <Icon as={HiOutlineUserCircle} boxSize={6} marginTop="auto" />
                   <Text fontSize={"14px"} marginLeft={0}>
-                    Homero
+                    Goku
                   </Text>
                 </HStack>
 

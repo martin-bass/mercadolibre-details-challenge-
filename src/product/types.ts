@@ -8,12 +8,11 @@ export interface ProductPicture extends Record<string, any> {
 export interface Product extends Record<string, any> {
   id?: string;
   title?: string;
-  price?: number;
+  price?: number | any;
   currency_id?: string;
   sold_quantity?: number;
   condition?: string;
   pictures: ProductPicture[];
-  attributes: string[] | any;
+  attributes?: string[] | any;
+  priceBefore?: number
 }
-
-

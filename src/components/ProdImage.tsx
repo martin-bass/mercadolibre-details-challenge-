@@ -10,12 +10,12 @@ function ProdImage() {
   const [imgSelect, setImgSelect] = useState(pictures[0].url);
   const [mouseOver, setMouseOver] = useState(false);
 
-  const handleSelect = (id: string) => {
+  const handleSelect = (id: string | undefined) => {
     let select: any = pictures.find((p) => p.id === id);
     setImgSelect(select.url);
   };
 
-  const handleMouseOver = (id: string) => {
+  const handleMouseOver = (id: string | undefined) => {
     setMouseOver(!mouseOver);
     handleSelect(id);
   };
@@ -49,7 +49,7 @@ function ProdImage() {
         marginLeft={"120px !important"}
         marginTop={"30px !important"}
       >
-        <Image objectFit="contain" src={imgSelect} />
+        <Image objectFit="contain" src={imgSelect} cursor={'zoom-in'}/>
       </Box>
     </HStack>
   );

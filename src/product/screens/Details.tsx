@@ -13,6 +13,8 @@ import MediosDePago from "../../components/MediosDePago";
 import ProdImage from "../../components/ProdImage";
 import Carrousel from '../../components/Carrousel';
 import Tabla from '../../components/Tabla';
+import Descripcion from '../../components/Descripcion';
+import ProdPromocionados from '../../components/ProdPromocionados';
 
 interface Props {
   product: Product;
@@ -40,12 +42,14 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
         <ProdImage />
         <Carrousel />
         <Tabla />
+        <Descripcion />
       </VStack>
       {/* Derecha */}
       <VStack>
         <Informacion />
         <Vendedor />
         <MediosDePago />
+        <ProdPromocionados />
       </VStack>
     </HStack>
   );

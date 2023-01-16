@@ -7,8 +7,9 @@ import {
   Tr,
   Td,
   VStack,
-  HStack,
   Flex,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -16,7 +17,6 @@ import product from "../product/mock";
 
 function Tabla() {
   const atributos = product.product.attributes;
-  console.log(atributos);
 
   return (
     <Stack>
@@ -114,157 +114,23 @@ function Tabla() {
       <VStack paddingTop={8} alignItems={"start"} paddingBottom={4}>
         <Text fontSize={20}>Otras Características</Text>
       </VStack>
-      <HStack spacing={40}>
-        {/* Columna IZQUIERDA */}
-        <VStack spacing={3}>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[7].name} x {atributos[14].name}:
-            </Text>
-            <Text fontSize={14}>
-              {" "}
-              {atributos[7].value_name} x {atributos[14].value_name}
-            </Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[0].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[0].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[1].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[1].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[2].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[2].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[3].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[3].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[4].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[4].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[5].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[5].value_name}</Text>
-          </Flex>
-        </VStack>
-        {/* Columna DERECHA */}
-        <VStack spacing={3}>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[6].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[6].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[8].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[8].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[9].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[9].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[10].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[10].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[11].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[11].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[12].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[12].value_name}</Text>
-          </Flex>
-          <Flex
-            justifyContent={"start"}
-            width={"100%"}
-            whiteSpace={"break-spaces"}
-          >
-            <Text fontSize={14} fontWeight={"bold"}>
-              {atributos[13].name}:
-            </Text>
-            <Text fontSize={14}> {atributos[13].value_name}</Text>
-          </Flex>
-        </VStack>
-      </HStack>
+      <Grid templateColumns="repeat(2, 1fr)">
+        {atributos.map((atr: any) => (
+          <GridItem whiteSpace={"break-spaces"} key={atr.id}>
+            <Flex
+              justifyContent={"start"}
+              width={"100%"}
+              whiteSpace={"break-spaces"}
+              py={1}
+            >
+              <Text fontSize={14} fontWeight={"bold"}>
+                {atr.name}:
+              </Text>
+              <Text fontSize={14}> {atr.value_name}</Text>
+            </Flex>
+          </GridItem>
+        ))}
+      </Grid>
     </Stack>
   );
 }
