@@ -15,6 +15,7 @@ import Carrousel from '../../components/Carrousel';
 import Tabla from '../../components/Tabla';
 import Descripcion from '../../components/Descripcion';
 import ProdPromocionados from '../../components/ProdPromocionados';
+import MercadoShops from '../../components/MercadoShops';
 
 interface Props {
   product: Product;
@@ -50,6 +51,7 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
         <Vendedor />
         <MediosDePago />
         <ProdPromocionados />
+        <MercadoShops />
       </VStack>
     </HStack>
   );
