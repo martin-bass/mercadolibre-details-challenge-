@@ -3,6 +3,7 @@ export interface ProductPicture extends Record<string, any> {
   url?: string;
   title?: string;
   price?: number | any;
+  tienda?: string;
 }
 
 export interface Product extends Record<string, any> {
@@ -15,4 +16,10 @@ export interface Product extends Record<string, any> {
   pictures: ProductPicture[];
   attributes?: string[] | any;
   priceBefore?: number
+}
+
+export interface PreguntasYRespuestas {
+  pregunta: string;
+  respuesta?: string
+  date?: string
 }

@@ -1,13 +1,8 @@
-import {
-  VStack,
-  Text,
-  Box,
-  HStack,
-  Tag,
-  Input,
-  Button,
-} from "@chakra-ui/react";
+import { VStack, Text, HStack, Tag, Input, Button } from "@chakra-ui/react";
 import React from "react";
+
+//Components
+import Preguntas from "../components/Preguntas";
 
 function Descripcion() {
   return (
@@ -114,6 +109,7 @@ function Descripcion() {
           </HStack>
         </VStack>
       </VStack>
+      <Preguntas />
     </VStack>
   );
 }

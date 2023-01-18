@@ -4,8 +4,6 @@ import {
   Image,
   Text,
   Grid,
-  Box,
-  Flex,
   StackDivider,
   Link,
   GridItem,
@@ -13,16 +11,14 @@ import {
 import React from "react";
 
 //ProdsPromocionados
-import ProdsPromocionados from "../product/ProdsPromocionados";
+import infoMercadoShop from "../product/prodsShop";
 import { ProductPicture } from "../product/types";
 
 function MercadoShops() {
-  const prods = ProdsPromocionados.ProdsPromocionados.pictures;
+  const prods = infoMercadoShop.infoMercadoShop.pictures;
 
   return (
     <Stack
-      //   border="1px solid"
-      //   borderColor="blackAlpha.300"
       borderRadius="10px"
       w={352}
       align="stretch"
@@ -34,18 +30,29 @@ function MercadoShops() {
           pt={3}
           marginBottom={"1px !important"}
         />
-        <Text color={"white"} fontSize={16} fontWeight={"bold"} marginTop={'0px !important'}>
+        <Text
+          color={"white"}
+          fontSize={16}
+          fontWeight={"bold"}
+          marginTop={"0px !important"}
+        >
           Comprá en tiendas fuera de Mercado Libre
         </Text>
       </VStack>
-      <Grid templateColumns="repeat(2, 1fr)" gap={3}>
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={2}
+        marginTop={"-20px !important"}
+      >
         {prods.map((prod) => (
-          <GridItem margin={"auto"}>
-            <Card prod={prod} key={prod.id} />
+          <GridItem margin={"auto"} key={prod.id}>
+            <Card prod={prod} />
           </GridItem>
         ))}
       </Grid>
-      <Link fontSize={12}>Crea tu Mercado Shop</Link>
+      <Link fontSize={12} py={3} textAlign="center">
+        Crea tu Mercado Shop
+      </Link>
     </Stack>
   );
 }
@@ -57,38 +64,35 @@ type Props = {
 function Card({ prod }: Props) {
   return (
     <Stack
-      w={159}
+      maxW={160}
       h={282}
       display="flex"
       alignItems={"center"}
       bgColor={"#fff"}
-      borderRadius="0px 0px 5px 5px"
+      borderRadius="5px"
+      boxShadow={"lg"}
     >
-      <Stack
-      //shadow={'xs'}
-      >
+      <Stack>
         <Stack
           h={38}
           bgColor={"#454545"}
-          w={"full"}
           p={"8px 12px"}
           display="flex"
           justifyContent={"center"}
           alignItems={"center"}
-          px={3}
           borderRadius="5px 5px 0px 0px"
         >
           <Text
             color={"white"}
             fontSize={10}
-            lineHeight={11}
             fontWeight={"bold"}
+            textAlign={"center"}
           >
-            HOLU
+            {prod.tienda?.toUpperCase()}
           </Text>
         </Stack>
         <VStack
-          spacing={1}
+          marginTop={"0px !important"}
           divider={
             <StackDivider
               borderColor="blackAlpha.100"
@@ -117,14 +121,19 @@ function Card({ prod }: Props) {
           marginLeft={"12px !important"}
         >
           {prod.priceBefore && (
-            <Text color={"#8c8c8c"} fontSize={10} as={"s"}>
-              $ {prod.priceBefore}
+            <Text color={"#8c8c8c"} fontSize={10} as={"s"} h={13}>
+              $ {prod.priceBefore.toLocaleString("de-DE")}
             </Text>
           )}
-          <Text fontSize={14} marginTop={"0px !important"} fontWeight={"s"}>
-            $ {prod.price}
+          <Text
+            fontSize={14}
+            marginTop={"0px !important"}
+            fontWeight={"bold"}
+            marginBottom={"5px !important"}
+          >
+            $ {prod.price.toLocaleString("de-DE")}
           </Text>
-          <Link color={"#00a650"} fontSize={10}>
+          <Link color={"#00a650"} fontSize={10} marginTop={"0px !important"}>
             Envío gratis
           </Link>
         </VStack>
