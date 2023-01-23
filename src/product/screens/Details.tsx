@@ -11,11 +11,12 @@ import Informacion from "../../components/Informacion";
 import Vendedor from "../../components/Vendedor";
 import MediosDePago from "../../components/MediosDePago";
 import ProdImage from "../../components/ProdImage";
-import Carrousel from '../../components/Carrousel';
-import Tabla from '../../components/Tabla';
-import Descripcion from '../../components/Descripcion';
-import ProdPromocionados from '../../components/ProdPromocionados';
-import MercadoShops from '../../components/MercadoShops';
+import Carrousel from "../../components/Carrousel";
+import Tabla from "../../components/Tabla";
+import Descripcion from "../../components/Descripcion";
+import ProdPromocionados from "../../components/ProdPromocionados";
+import MercadoShops from "../../components/MercadoShops";
+
 
 interface Props {
   product: Product;
@@ -31,14 +32,16 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
       minHeight={"100vh"}
       justifyContent={"space-between"}
       alignItems={"start"}
-      py={5}
-      px={8}
+      paddingTop={5}
+      paddingBottom={20}
+      px={5}
     >
       {/* Izquierda */}
       <VStack
         spacing={4}
         align="stretch"
         divider={<StackDivider borderColor="blackAlpha.300" />}
+        w={768}
       >
         <ProdImage />
         <Carrousel />
@@ -46,7 +49,7 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
         <Descripcion />
       </VStack>
       {/* Derecha */}
-      <VStack>
+      <VStack >
         <Informacion />
         <Vendedor />
         <MediosDePago />

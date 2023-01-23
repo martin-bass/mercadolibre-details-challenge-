@@ -18,12 +18,7 @@ function MercadoShops() {
   const prods = infoMercadoShop.infoMercadoShop.pictures;
 
   return (
-    <Stack
-      borderRadius="10px"
-      w={352}
-      align="stretch"
-      bgColor={"#F5F5F5"}
-    >
+    <Stack borderRadius="10px" w={352} align="stretch" bgColor={"#F5F5F5"}>
       <VStack bgColor={"#E82E8A"} h={120} borderRadius="5px 5px 0px 0px">
         <Image
           src="https://http2.mlstatic.com/frontend-assets/vpp-frontend/shops-icon.svg"

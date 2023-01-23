@@ -3,6 +3,7 @@ import React from "react";
 
 //Components
 import Preguntas from "../components/Preguntas";
+import Opiniones from "../components/Opiniones";
 
 function Descripcion() {
   return (
@@ -107,9 +108,13 @@ function Descripcion() {
               Preguntar
             </Button>
           </HStack>
+          <Text fontSize={13} color={"blackAlpha.700"} pt={3}>
+            Tiempo aproximado de respuesta: 37 minutos
+          </Text>
         </VStack>
       </VStack>
       <Preguntas />
+      <Opiniones />
     </VStack>
   );
 }

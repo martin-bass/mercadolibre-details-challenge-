@@ -15,11 +15,25 @@ export interface Product extends Record<string, any> {
   condition?: string;
   pictures: ProductPicture[];
   attributes?: string[] | any;
-  priceBefore?: number
+  priceBefore?: number;
 }
 
 export interface PreguntasYRespuestas {
+  id?: number;
   pregunta: string;
-  respuesta?: string
-  date?: string
+  respuesta?: string;
+  date?: string;
+  denunciar?: boolean;
+}
+
+export interface Review {
+  estrellas: string;
+  value: number;
+  cantidadPersonas: number;
+}
+
+export interface Opiniones {
+  id: number;
+  fecha: string;
+  opinion: string;
 }

@@ -44,3 +44,7 @@
 .swiper-button-prev::after {
   font-size: 20px !important;
 }
+
+.Swiper {
+  background: #ededed;
+}

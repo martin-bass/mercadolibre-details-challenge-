@@ -6,7 +6,7 @@ import {
   Image,
   StackDivider,
   Link,
-  HStack
+  HStack,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -37,7 +37,7 @@ const Carrousel: React.FC = () => {
       <Text fontSize={24} w={"full"}>
         Publicaciones del vendedor
       </Text>
-      <Stack w={800} marginTop={"20px !important"}>
+      <Stack w={800} marginTop={"30px !important"}>
         <Swiper
           slidesPerView={3}
           spaceBetween={0}
@@ -45,7 +45,6 @@ const Carrousel: React.FC = () => {
           navigation={true}
           modules={[Navigation]}
           width={780}
-          className="mySwiper"
         >
           {infoCards.map((info) => (
             <SwiperSlide key={info.id}>
@@ -54,14 +53,20 @@ const Carrousel: React.FC = () => {
           ))}
         </Swiper>
       </Stack>
-      <HStack paddingTop={5} alignItems={'start'} w={'full'} paddingLeft={5} marginBottom={'30px !important'}>
+      <HStack
+        paddingTop={5}
+        alignItems={"start"}
+        w={"full"}
+        paddingLeft={5}
+        marginBottom={"30px !important"}
+      >
         <Link fontSize={14}>Ver más publicaciones del vendedor</Link>
       </HStack>
     </VStack>
   );
 };
 
-const CarrouselCard: React.FC<Props> = ({ infoParaElCard }) => {
+export const CarrouselCard: React.FC<Props> = ({ infoParaElCard }) => {
   return (
     <VStack
       border="1px solid"
@@ -69,6 +74,7 @@ const CarrouselCard: React.FC<Props> = ({ infoParaElCard }) => {
       borderRadius="10px"
       w={220}
       h={345}
+      bgColor={"#fff"}
       _hover={{
         boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px;",
       }}
@@ -87,7 +93,13 @@ const CarrouselCard: React.FC<Props> = ({ infoParaElCard }) => {
         <Text fontSize={24}>
           $ {infoParaElCard.price.toLocaleString("de-DE")}
         </Text>
-        <Text fontSize={14} textAlign={"start"}>
+        <Text
+          fontSize={14}
+          textAlign={"start"}
+          overflow={"hidden"}
+          textOverflow={"ellipsis"}
+          h={37}
+        >
           {infoParaElCard.title}
         </Text>
       </VStack>

@@ -1,8 +1,7 @@
-import { HStack, Image, Stack, VStack, Box } from "@chakra-ui/react";
+import { HStack, Image, VStack, Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import Producto from "../product/mock";
-
 
 function ProdImage() {
   const { pictures } = Producto.product;
@@ -42,14 +41,14 @@ function ProdImage() {
       </VStack>
       <Box
         w="500px"
-        h='500px'
+        h="500px"
         display="flex"
         justifyContent={"center"}
         alignItems={"center"}
         marginLeft={"120px !important"}
         marginTop={"30px !important"}
       >
-        <Image objectFit="contain" src={imgSelect} cursor={'zoom-in'}/>
+        <Image objectFit="contain" src={imgSelect} cursor={"zoom-in"} />
       </Box>
     </HStack>
   );

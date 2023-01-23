@@ -1,4 +1,4 @@
-import {Product} from "./types";
+import { Product } from "./types";
 
 export default {
   get product(): Product {
@@ -26,13 +26,16 @@ export default {
       permalink:
         "https://articulo.mercadolibre.com.ar/MLA-741093357-peluche-stitch-angel-lilo-1-metro-100cm-reales-gigante-_JM",
       thumbnail_id: "978173-MLA32582347639_102019",
-      thumbnail: "http://http2.mlstatic.com/D_978173-MLA32582347639_102019-I.jpg",
-      secure_thumbnail: "https://http2.mlstatic.com/D_978173-MLA32582347639_102019-I.jpg",
+      thumbnail:
+        "http://http2.mlstatic.com/D_978173-MLA32582347639_102019-I.jpg",
+      secure_thumbnail:
+        "https://http2.mlstatic.com/D_978173-MLA32582347639_102019-I.jpg",
       pictures: [
         {
           id: "978173-MLA32582347639_102019",
           url: "http://http2.mlstatic.com/D_978173-MLA32582347639_102019-O.jpg",
-          secure_url: "https://http2.mlstatic.com/D_978173-MLA32582347639_102019-O.jpg",
+          secure_url:
+            "https://http2.mlstatic.com/D_978173-MLA32582347639_102019-O.jpg",
           size: "500x496",
           max_size: "1200x1192",
           quality: "",
@@ -40,7 +43,8 @@ export default {
         {
           id: "754004-MLA32299823528_092019",
           url: "http://http2.mlstatic.com/D_754004-MLA32299823528_092019-O.jpg",
-          secure_url: "https://http2.mlstatic.com/D_754004-MLA32299823528_092019-O.jpg",
+          secure_url:
+            "https://http2.mlstatic.com/D_754004-MLA32299823528_092019-O.jpg",
           size: "500x396",
           max_size: "1200x951",
           quality: "",
@@ -48,7 +52,8 @@ export default {
         {
           id: "616691-MLA27900381255_082018",
           url: "http://http2.mlstatic.com/D_616691-MLA27900381255_082018-O.jpg",
-          secure_url: "https://http2.mlstatic.com/D_616691-MLA27900381255_082018-O.jpg",
+          secure_url:
+            "https://http2.mlstatic.com/D_616691-MLA27900381255_082018-O.jpg",
           size: "500x500",
           max_size: "800x800",
           quality: "",
@@ -56,7 +61,8 @@ export default {
         {
           id: "918230-MLA31424182281_072019",
           url: "http://http2.mlstatic.com/D_918230-MLA31424182281_072019-O.jpg",
-          secure_url: "https://http2.mlstatic.com/D_918230-MLA31424182281_072019-O.jpg",
+          secure_url:
+            "https://http2.mlstatic.com/D_918230-MLA31424182281_072019-O.jpg",
           size: "281x500",
           max_size: "1080x1920",
           quality: "",

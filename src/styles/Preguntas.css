@@ -1,0 +1,15 @@
+.denunciarR {
+  display: none;
+}
+
+.denunciarP {
+  display: none;
+}
+
+.pregunta:hover .denunciarP {
+  display: block !important;
+}
+
+.respuesta:hover .denunciarR {
+  display: block !important;
+}

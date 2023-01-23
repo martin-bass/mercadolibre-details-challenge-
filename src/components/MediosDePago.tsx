@@ -1,5 +1,4 @@
 import {
-  Stack,
   Text,
   VStack,
   HStack,

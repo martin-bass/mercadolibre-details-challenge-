@@ -123,10 +123,10 @@ function NavBar() {
             >
               <Flex>
                 <Menu
-                  //autoSelect={false}
-                  // boundary={'scrollParent'}
-                  // preventOverflow={false}
-                  //flip={false}
+                //autoSelect={false}
+                // boundary={'scrollParent'}
+                // preventOverflow={false}
+                //flip={false}
                 >
                   <MenuButton
                     as={Button}
