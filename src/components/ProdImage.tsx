@@ -40,12 +40,12 @@ function ProdImage() {
         ))}
       </VStack>
       <Box
-        w="500px"
+        w={{ sm: "400px", md: "500px" }}
         h="500px"
         display="flex"
         justifyContent={"center"}
         alignItems={"center"}
-        marginLeft={"120px !important"}
+        marginLeft={{ sm: "30px !important", md: "120px !important" }}
         marginTop={"30px !important"}
       >
         <Image objectFit="contain" src={imgSelect} cursor={"zoom-in"} />

@@ -8,7 +8,9 @@ import {
   Link,
   GridItem,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+
+import "../styles/Fixed.css";
 
 //ProdsPromocionados
 import infoMercadoShop from "../product/prodsShop";
@@ -17,8 +19,26 @@ import { ProductPicture } from "../product/types";
 function MercadoShops() {
   const prods = infoMercadoShop.infoMercadoShop.pictures;
 
+  const [fix, setFix] = useState(false);
+
+  const setFixed = () => {
+    if (window.scrollY > 2903 && window.scrollY < 3600) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  };
+
+  window.addEventListener("scroll", setFixed);
+
   return (
-    <Stack borderRadius="10px" w={352} align="stretch" bgColor={"#F5F5F5"}>
+    <Stack
+      borderRadius="10px"
+      w={352}
+      align="stretch"
+      bgColor={"#F5F5F5"}
+      className={fix ? "fixed" : "mercadoShop"}
+    >
       <VStack bgColor={"#E82E8A"} h={120} borderRadius="5px 5px 0px 0px">
         <Image
           src="https://http2.mlstatic.com/frontend-assets/vpp-frontend/shops-icon.svg"

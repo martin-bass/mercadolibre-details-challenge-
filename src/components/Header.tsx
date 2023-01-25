@@ -19,12 +19,15 @@ function Header() {
   return (
     <VStack spacing={5} py={2}>
       <Flex justifyContent={"start"} width={"100%"} whiteSpace={"break-spaces"}>
-        <Text fontWeight={"bold"} fontSize={14}>
+        <Text fontWeight={"bold"} fontSize={{ base: 8, sm: 10, md: 14 }}>
           También puede interesarte:
         </Text>
-        <Text fontSize={14}> peluches de sonic</Text>
-        <Text fontSize={14}> - peluches de stitch</Text>
-        <Text fontSize={14}> - squishmallows</Text>
+        <Text fontSize={{ base: 8, sm: 10, md: 14 }}> peluches de sonic</Text>
+        <Text fontSize={{ base: 8, sm: 10, md: 14 }}>
+          {" "}
+          - peluches de stitch
+        </Text>
+        <Text fontSize={{ base: 8, sm: 10, md: 14 }}> - squishmallows</Text>
       </Flex>
       <HStack
         justifyContent={"space-between"}
@@ -33,6 +36,7 @@ function Header() {
         spacing={3}
       >
         <HStack
+          display={{ base: "none", sm: "none", md: "flex" }}
           divider={
             <StackDivider
               borderColor="blackAlpha.300"
@@ -41,15 +45,17 @@ function Header() {
             />
           }
         >
-          <Text fontSize={14}>Volver al listado</Text>
+          <Text fontSize={{ base: 8, sm: 10, md: 14 }}>Volver al listado</Text>
           <Stack direction={"row"}>
-            <Link fontSize={14}>Juegos y juguetes</Link>
+            <Link fontSize={{ base: 8, sm: 10, md: 14 }}>
+              Juegos y juguetes
+            </Link>
             <Icon
               as={VscChevronRight}
               alignSelf="center"
               color="blackAlpha.700"
             />
-            <Link fontSize={14}>Peluches</Link>
+            <Link fontSize={{ base: 8, sm: 10, md: 14 }}>Peluches</Link>
           </Stack>
         </HStack>
         <HStack

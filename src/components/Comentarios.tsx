@@ -13,13 +13,20 @@ import {
   StackDivider,
   Stack,
   Link,
+  Flex,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 import { Opiniones } from "../product/types";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { AiFillStar, AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
+import {
+  AiFillStar,
+  AiOutlineLike,
+  AiOutlineDislike,
+  AiFillLike,
+  AiFillDislike,
+} from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 const opiniones: Opiniones[] = [
@@ -54,58 +61,66 @@ export type Props = {
 function Comentarios() {
   return (
     <VStack alignItems={"start"}>
-      <HStack spacing={5}>
-        <Menu>
-          <MenuButton
-            as={Button}
-            rightIcon={<ChevronDownIcon />}
-            color={"#3483fa"}
-            bgColor={"#E2EEFB"}
-            borderRadius={"40px"}
-            fontSize={14}
-            w={"120px"}
-            h={"32px"}
-            px={22}
-          >
-            Ordenar
-          </MenuButton>
-          <MenuList w={"120px"}>
-            <MenuItem fontSize={14}>Más útiles</MenuItem>
-            <MenuItem fontSize={14}>Más recientes</MenuItem>
-          </MenuList>
-        </Menu>
-        <Menu>
-          <MenuButton
-            as={Button}
-            rightIcon={<ChevronDownIcon />}
-            color={"#3483fa"}
-            bgColor={"#E2EEFB"}
-            borderRadius={"40px"}
-            fontSize={14}
-            h={"32px"}
-            px={22}
-          >
-            Calificación
-          </MenuButton>
-          <MenuList fontSize={18}>
-            <MenuItem>
-              5 <Icon as={AiFillStar} paddingLeft={1} />
-            </MenuItem>
-            <MenuItem>
-              4 <Icon as={AiFillStar} paddingLeft={1} />
-            </MenuItem>
-            <MenuItem>
-              3 <Icon as={AiFillStar} paddingLeft={1} />
-            </MenuItem>
-            <MenuItem>
-              2 <Icon as={AiFillStar} paddingLeft={1} />
-            </MenuItem>
-            <MenuItem>
-              1 <Icon as={AiFillStar} paddingLeft={1} />
-            </MenuItem>
-          </MenuList>
-        </Menu>
+      <HStack>
+        <Flex>
+          <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              color={"#3483fa"}
+              bgColor={"#E2EEFB"}
+              borderRadius={"40px"}
+              fontSize={14}
+              w={"120px"}
+              h={"32px"}
+              px={22}
+            >
+              Ordenar
+            </MenuButton>
+            <MenuList>
+              <MenuItem fontSize={14}>Más útiles</MenuItem>
+              <MenuItem fontSize={14}>Más recientes</MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
+        <Flex>
+          <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              color={"#3483fa"}
+              bgColor={"#E2EEFB"}
+              borderRadius={"40px"}
+              fontSize={14}
+              h={"32px"}
+              px={22}
+            >
+              Calificación
+            </MenuButton>
+            <MenuList fontSize={18}>
+              <MenuItem>
+                <Text fontSize={14}>Todas</Text>
+              </MenuItem>
+              <MenuItem>
+                5 <Icon as={AiFillStar} paddingLeft={1} />
+              </MenuItem>
+              <MenuItem>
+                4 <Icon as={AiFillStar} paddingLeft={1} />
+              </MenuItem>
+              <MenuItem>
+                3 <Icon as={AiFillStar} paddingLeft={1} />
+              </MenuItem>
+              <MenuItem>
+                2 <Icon as={AiFillStar} paddingLeft={1} />
+              </MenuItem>
+              <MenuItem>
+                1 <Icon as={AiFillStar} paddingLeft={1} />
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
       </HStack>
+
       <Stack
         divider={
           <StackDivider
@@ -125,6 +140,9 @@ function Comentarios() {
 }
 
 function Opinion({ opinion }: Props) {
+  const [fillLike, setFillLike] = useState(false);
+  const [fillDisLike, setFillDisLike] = useState(false);
+
   return (
     <VStack alignItems={"start"} marginTop={"30px !important"} w={"full"}>
       <HStack display={"flex"} justifyContent={"space-between"} w={"full"}>
@@ -158,7 +176,14 @@ function Opinion({ opinion }: Props) {
             fontSize={12}
             color={"blackAlpha.600"}
             variant="outline"
-            rightIcon={<AiOutlineLike fontSize={18} />}
+            rightIcon={
+              fillLike ? (
+                <AiFillLike fontSize={18} />
+              ) : (
+                <AiOutlineLike fontSize={18} />
+              )
+            }
+            onClick={() => setFillLike(!fillLike)}
           >
             Es útil
           </Button>
@@ -169,7 +194,14 @@ function Opinion({ opinion }: Props) {
             fontSize={18}
             color={"blackAlpha.600"}
             variant="outline"
-            icon={<AiOutlineDislike />}
+            icon={
+              fillDisLike ? (
+                <AiFillDislike fontSize={18} />
+              ) : (
+                <AiOutlineDislike fontSize={18} />
+              )
+            }
+            onClick={() => setFillDisLike(!fillDisLike)}
             aria-label={"unlike"}
           />
         </HStack>

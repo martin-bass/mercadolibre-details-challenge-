@@ -17,7 +17,6 @@ import Descripcion from "../../components/Descripcion";
 import ProdPromocionados from "../../components/ProdPromocionados";
 import MercadoShops from "../../components/MercadoShops";
 
-
 interface Props {
   product: Product;
 }
@@ -35,13 +34,15 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
       paddingTop={5}
       paddingBottom={20}
       px={5}
+      position="relative"
+      w="full"
     >
       {/* Izquierda */}
       <VStack
         spacing={4}
         align="stretch"
         divider={<StackDivider borderColor="blackAlpha.300" />}
-        w={768}
+        w={{ base: 440, md: 768, lg: 768 }}
       >
         <ProdImage />
         <Carrousel />
@@ -49,7 +50,11 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
         <Descripcion />
       </VStack>
       {/* Derecha */}
-      <VStack >
+      <VStack
+        position={"relative"}
+        h={"3997px"}
+        display={{ base: "none", md: "none", lg: "flex" }}
+      >
         <Informacion />
         <Vendedor />
         <MediosDePago />

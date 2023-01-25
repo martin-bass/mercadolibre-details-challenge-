@@ -1,13 +1,71 @@
 import { VStack, Text, HStack, Tag, Input, Button } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //Components
 import Preguntas from "../components/Preguntas";
 import Opiniones from "../components/Opiniones";
 
+import { PreguntasYRespuestas } from "../product/types";
+
+const PreguntasYRespuestas: PreguntasYRespuestas[] = [
+  {
+    id: 1,
+    pregunta: "Hola como estas? Tienen stock?",
+    respuesta: "Hola! Sí, tenemos :)",
+    date: "06/07/2022",
+  },
+  {
+    id: 2,
+    pregunta: "Hacen envios hasta Catamarca?",
+    respuesta: "Sí, lo envíamos por Expreso",
+    date: "08/09/2022",
+  },
+  {
+    id: 3,
+    pregunta: "Lo tienen en un tamaño mas chico?",
+    respuesta: "Hola! En este momento sólo nos quedó el grande",
+    date: "20/08/2022",
+  },
+  {
+    id: 4,
+    pregunta: "Se puede retirar en algun domicilio?",
+    respuesta: "Siiii, ofertar para ver donde recogerlo",
+    date: "01/09/2022",
+  },
+];
+
 function Descripcion() {
+  const [newQ, setnewQ] = useState({
+    pregunta: "",
+  });
+
+  const handleChange = (e: any) => {
+    e.preventDefault();
+    const newID = PreguntasYRespuestas.length + 1;
+    const f = new Date();
+    setnewQ({
+      id: newID,
+      [e.target.name]: e.target.value,
+      respuesta:
+        "Hola! Muchas gracias por comunicarte. A la brevedad te responderemos :)",
+      date: `${f.getDate()}/${String(f.getMonth() + 1).padStart(
+        2,
+        "0"
+      )}/${f.getFullYear()}`,
+    });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    PreguntasYRespuestas.push(newQ);
+    PreguntasYRespuestas.reverse();
+    setnewQ({ pregunta: "" });
+  };
+
+  useEffect(() => {}, [PreguntasYRespuestas]);
+
   return (
-    <VStack alignItems={"start"}>
+    <VStack alignItems={"start"} w={{ base: 440, md: 768 }}>
       <Text fontSize={24} py={4}>
         Descripción
       </Text>
@@ -97,6 +155,8 @@ function Descripcion() {
               h={"48px"}
               w={"550px"}
               placeholder="Escribí tu pregunta..."
+              name="pregunta"
+              onChange={handleChange}
             />
             <Button
               w={"153px"}
@@ -104,6 +164,7 @@ function Descripcion() {
               marginLeft={"20px !important"}
               colorScheme="messenger"
               fontSize={16}
+              onClick={handleSubmit}
             >
               Preguntar
             </Button>
@@ -113,7 +174,7 @@ function Descripcion() {
           </Text>
         </VStack>
       </VStack>
-      <Preguntas />
+      <Preguntas PreguntasYRespuestas={PreguntasYRespuestas} />
       <Opiniones />
     </VStack>
   );

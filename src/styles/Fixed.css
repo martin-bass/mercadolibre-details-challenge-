@@ -1,0 +1,9 @@
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.mercadoShop {
+  position: sticky;
+  top: 0px;
+}

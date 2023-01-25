@@ -57,7 +57,12 @@ const itemsDelMenu: string[] = [
 
 function NavBar() {
   return (
-    <Box backgroundColor="primary.500" boxShadow="sm" paddingY={1.5}>
+    <Box
+      backgroundColor="primary.500"
+      boxShadow="sm"
+      paddingY={1.5}
+      display={{ md: "flex", lg: "flex" }}
+    >
       <Container alignSelf="center" maxWidth="container.xl" paddingX={0}>
         <Stack>
           <HStack
@@ -97,29 +102,28 @@ function NavBar() {
               </HStack>
             </HStack>
           </HStack>
-
           <HStack
             spacing={12}
-            display="flex"
-            alignItems={"baseline"}
             id="stackInferior"
+            display={{ base: "none", sm: "none", md: "none", lg: "flex" }}
           >
-            <Stack direction={"row"} fontSize="sm">
+            <HStack fontSize="sm">
               <Icon as={HiOutlineMapPin} boxSize={6} marginTop={2} />
-              <Box>
+              <Box w={"auto"}>
                 <Text fontSize={"smaller"} color={"blackAlpha.600"}>
-                  Enviar a Goku
+                  Enviar a Krusty
                 </Text>
                 <Text fontSize={"sm"} color={"blackAlpha.800"}>
                   Calle Falsa 123
                 </Text>
               </Box>
-            </Stack>
+            </HStack>
             <HStack
               fontSize={"14px"}
               spacing={4}
               color={"blackAlpha.600"}
               paddingLeft={6}
+              display={{ base: "none", sm: "none", md: "none", lg: "flex" }}
             >
               <Flex>
                 <Menu
@@ -166,58 +170,57 @@ function NavBar() {
                 <Text>Ayuda</Text>
               </HStack>
             </HStack>
-            <Stack
-              direction={"row"}
+            <HStack
               justifyContent={"center"}
               alignItems={"baseline"}
-              spacing={4}
               color={"blackAlpha.800"}
-              paddingLeft={4}
+              w={"auto"}
             >
               <HStack
-                spacing={3}
-                paddingLeft={16}
-                d={"flex"}
+                marginLeft={"100px !important"}
+                display={"flex"}
                 alignItems={"baseline"}
               >
-                <HStack d={"flex"} align={"baseline"}>
+                <HStack display={"flex"} alignItems={"baseline"} spacing={0}>
                   <Icon as={HiOutlineUserCircle} boxSize={6} marginTop="auto" />
-                  <Text fontSize={"14px"} marginLeft={0}>
-                    Goku
+                  <Text fontSize={"14px"} paddingLeft={1}>
+                    Krusty
                   </Text>
+                  <Icon
+                    as={BiChevronDown}
+                    boxSize={5}
+                    marginLeft={"0px !important"}
+                    color={"blackAlpha.500"}
+                    cursor={"pointer"}
+                    paddingTop={"9px"}
+                  />
                 </HStack>
 
-                <HStack spacing={3}>
-                  <Text fontSize={"14px"} width={"100%"}>
-                    Mis compras
+                <HStack spacing={1}>
+                  <Text fontSize={"14px"}>Mis compras</Text>
+                  <Text fontSize={"14px"} paddingLeft={3}>
+                    Favoritos
                   </Text>
-                  <Menu>
-                    <MenuButton
-                      as={Button}
-                      rightIcon={<BiChevronDown color={"grey"} />}
-                      variant="unstyled"
-                      fontSize={"14px"}
-                      fontWeight={"normal"}
-                      d="flex"
-                      alignItems="center"
-                      py={0}
-                    >
-                      Favoritos
-                    </MenuButton>
-                  </Menu>
+                  <Icon
+                    as={BiChevronDown}
+                    boxSize={5}
+                    marginLeft={"0px !important"}
+                    color={"blackAlpha.500"}
+                    cursor={"pointer"}
+                  />
                 </HStack>
               </HStack>
               <HStack
+                paddingLeft={3}
                 spacing={5}
                 color={"blackAlpha.800"}
-                d={"flex"}
+                display={"flex"}
                 alignItems={"baseline"}
-                paddingLeft={4}
               >
                 <Icon as={SlBell} boxSize={5} _hover={{ cursor: "pointer" }} />
                 <Icon as={BsCart} boxSize={5} _hover={{ cursor: "pointer" }} />
               </HStack>
-            </Stack>
+            </HStack>
           </HStack>
         </Stack>
       </Container>
