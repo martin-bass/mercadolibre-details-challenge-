@@ -22,7 +22,7 @@ function MercadoShops() {
   const [fix, setFix] = useState(false);
 
   const setFixed = () => {
-    if (window.scrollY > 2903 && window.scrollY < 3600) {
+    if (window.scrollY > 2903 && window.scrollY < 3450) {
       setFix(true);
     } else {
       setFix(false);
