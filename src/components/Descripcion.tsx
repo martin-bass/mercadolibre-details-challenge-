@@ -35,7 +35,7 @@ const PreguntasYRespuestas: PreguntasYRespuestas[] = [
 ];
 
 function Descripcion() {
-  const [newQ, setnewQ] = useState({
+  const [newQ, setnewQ] = useState<{}>({
     pregunta: "",
   });
 

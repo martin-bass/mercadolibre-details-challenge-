@@ -1,3 +1,5 @@
+import { SetStateAction } from "react";
+
 export interface ProductPicture extends Record<string, any> {
   id?: string;
   url?: string;
@@ -19,11 +21,10 @@ export interface Product extends Record<string, any> {
 }
 
 export interface PreguntasYRespuestas {
-  id?: number;
-  pregunta: string;
+  id?: number ;
+  pregunta?: string;
   respuesta?: string;
   date?: string;
-  denunciar?: boolean;
 }
 
 export interface Review {
