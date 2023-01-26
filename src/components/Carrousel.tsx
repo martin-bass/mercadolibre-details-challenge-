@@ -33,7 +33,7 @@ const Carrousel: React.FC = () => {
   const infoCards = infoCarrousel.infoCarrousel.pictures;
 
   return (
-    <VStack w={"full"}>
+    <VStack w={{ base: "150px", md: 768, lg: "full" }}>
       <Text fontSize={24} w={"full"}>
         Publicaciones del vendedor
       </Text>

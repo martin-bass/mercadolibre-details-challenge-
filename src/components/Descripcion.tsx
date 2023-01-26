@@ -65,7 +65,7 @@ function Descripcion() {
   useEffect(() => {}, [PreguntasYRespuestas]);
 
   return (
-    <VStack alignItems={"start"} w={{ base: 440, md: 768 }}>
+    <VStack alignItems={"start"} w={{ base: 400, md: 768 }}>
       <Text fontSize={24} py={4}>
         Descripción
       </Text>
@@ -149,7 +149,7 @@ function Descripcion() {
           >
             Preguntale al vendedor
           </Text>
-          <HStack>
+          <HStack w={{ base: 440, md: 768 }}>
             <Input
               padding={"15px 12px 13px 16px"}
               h={"48px"}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 //Chakra UI
 import { Container, Stack } from "@chakra-ui/react";

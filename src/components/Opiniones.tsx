@@ -38,7 +38,7 @@ let review: Review[] = [
 
 function Opiniones() {
   return (
-    <Stack>
+    <Stack display={{ sm: "none", md: "flex", lg: "flex" }}>
       <Text fontSize={24}>Opiniones del producto</Text>
       <HStack spacing={10} alignItems={"start"}>
         <VStack>

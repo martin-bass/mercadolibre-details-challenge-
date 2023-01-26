@@ -23,7 +23,7 @@ function Vendedor() {
       borderColor="blackAlpha.300"
       borderRadius="10px"
       padding="1rem"
-      w={352}
+      w={{ base: 440, md: 768, lg: 352 }}
       px={4}
       py={7}
     >

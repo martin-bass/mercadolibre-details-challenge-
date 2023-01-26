@@ -21,7 +21,7 @@ export interface Product extends Record<string, any> {
 }
 
 export interface PreguntasYRespuestas {
-  id?: number ;
+  id?: number;
   pregunta?: string;
   respuesta?: string;
   date?: string;

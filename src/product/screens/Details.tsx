@@ -4,7 +4,7 @@ import { Product } from "../types";
 import mock from "../mock";
 
 //Chakra UI
-import { HStack, VStack, StackDivider } from "@chakra-ui/react";
+import { HStack, VStack, StackDivider, Stack } from "@chakra-ui/react";
 
 //Components
 import Informacion from "../../components/Informacion";
@@ -43,12 +43,32 @@ const DetailsScreen: React.FC<Props> = ({ product }) => {
         align="stretch"
         divider={<StackDivider borderColor="blackAlpha.300" />}
         w={{ base: 440, md: 768, lg: 768 }}
+        display={{ base: "none", sm: "none", md: "none", lg: "flex" }}
       >
         <ProdImage />
         <Carrousel />
         <Tabla />
         <Descripcion />
       </VStack>
+
+      {/* Mobile */}
+      <VStack
+        spacing={4}
+        align="stretch"
+        divider={<StackDivider borderColor="blackAlpha.300" />}
+        w={{ base: 440, md: 768, lg: 768 }}
+        display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+      >
+        <ProdImage />
+        <Informacion />
+        <Vendedor />
+        <MediosDePago />
+        <ProdPromocionados />
+        <Carrousel />
+        <Tabla />
+        <Descripcion />
+      </VStack>
+
       {/* Derecha */}
       <VStack
         position={"relative"}
