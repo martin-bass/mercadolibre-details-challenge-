@@ -19,7 +19,7 @@ function Tabla() {
   const atributos = product.product.attributes;
 
   return (
-    <Stack w={{ base: 440, md: 768, lg: 352 }}>
+    <Stack w={{ base: 440, md: 768}}>
       <Text fontSize={24} w={"full"} marginTop={"20px !important"}>
         Características principales
       </Text>
