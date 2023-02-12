@@ -5,6 +5,7 @@ overrides:
 
 specifiers:
   '@babel/core': ^7.20.12
+  '@chakra-ui/breakpoint-utils': ^2.0.6
   '@chakra-ui/cli': ^1.3.0
   '@chakra-ui/icons': ^2.0.17
   '@chakra-ui/react': ^1.5.2
@@ -41,6 +42,7 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.20.12
+  '@chakra-ui/breakpoint-utils': 2.0.6
   '@chakra-ui/icons': 2.0.17_kpyob5zmo6lkbcjz7u2brpdvse
   '@chakra-ui/react': 1.8.9_ui5vjjhbvcimrhoqe7n3pr2gqe
   '@chakra-ui/system': 2.3.8_3lsrph6se4xquylogkb5yq6ogu
@@ -373,6 +375,12 @@ packages:
       '@chakra-ui/system': 1.12.1_3lsrph6se4xquylogkb5yq6ogu
       '@chakra-ui/utils': 1.10.4
       react: 17.0.2
+    dev: false
+
+  /@chakra-ui/breakpoint-utils/2.0.6:
+    resolution: {integrity: sha512-aigYoZdHtV+PNFr/RTHjbIYK49PsMLvwtpZsowKWJ6xDyPKHtfhwZ2VOBTUyaQf4mXgaB9MNOF46zOTJN8RfLQ==}
+    dependencies:
+      '@chakra-ui/shared-utils': 2.0.4
     dev: false
 
   /@chakra-ui/button/1.5.10_5qblqjf622vzzkdskgddihcrca:

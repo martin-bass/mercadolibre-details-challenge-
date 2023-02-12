@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
+    "@chakra-ui/breakpoint-utils": "^2.0.6",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^1.5.2",
     "@chakra-ui/system": "^2.3.8",
