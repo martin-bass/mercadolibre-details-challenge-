@@ -7,10 +7,14 @@
     "serve": "vite preview",
     "theme": "chakra-cli tokens ./src/theme.ts"
   },
+  "resolutions": {
+    "csstype": "3.0.10"
+  },
   "dependencies": {
     "@babel/core": "^7.20.12",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^1.5.2",
+    "@chakra-ui/system": "^2.3.8",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "@popperjs/core": "^2.11.6",
